@@ -20,6 +20,7 @@ Perfect for projects looking for:
 **Tutorial:** [Pending...]
 
 **Dependencies:**
+* Unity.TextMeshPro
 * [Rossoforge-Extensions](https://github.com/rossogames/Rossoforge-Extensions.git)
 
 #
