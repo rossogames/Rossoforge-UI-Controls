@@ -15,7 +15,7 @@ Perfect for projects looking for:
 * Quick integration into menus, HUDs, and popups without duplicating event logic.
 
 The following dependencies must be installed
-[[Rossoforge-Extensions]](https://github.com/rossogames/Rossoforge-Extensions.git)
+* [[Rossoforge-Extensions]](https://github.com/rossogames/Rossoforge-Extensions.git)
 
 Watch the tutorial on [Pending..]
 #
