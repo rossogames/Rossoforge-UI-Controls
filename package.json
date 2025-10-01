@@ -1,0 +1,18 @@
+{
+  "name": "com.rossogames.rossoforge-ui-controls",
+  "version": "1.2.0",
+  "displayName": "Rossoforge-UI-Controls",
+  "unity": "2025.0",
+  "author": {
+    "name": "Agustin Rosso",
+    "url": "https://www.linkedin.com/in/rossoagustin/"
+  },
+  "keywords": [
+    "rossogames",
+    "rossoforge",
+    "ui",
+    "UI",
+    "controls"
+  ],
+  "description": "A Unity package that provides a collection of extensible UI controls (buttons, toggles, sliders, input fields, dropdowns, switches, etc.)."
+}
