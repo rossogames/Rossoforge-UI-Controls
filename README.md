@@ -17,7 +17,9 @@ Perfect for projects looking for:
 The following dependencies must be installed
 * [[Rossoforge-Extensions]](https://github.com/rossogames/Rossoforge-Extensions.git)
 
-Watch the tutorial on [Pending..]
+**Version**: Unity 6 or higher
+
+**Tutorial**: [Pending..]
 #
 
 #This package is part of the **Rossoforge** suite, designed to streamline and enhance Unity development workflows.
