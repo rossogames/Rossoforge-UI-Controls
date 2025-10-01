@@ -16,9 +16,9 @@
   ],
   "samples": [
     {
-      "displayName": "UI Rounded Sprites",
-      "description": "Provides a set of white sprites with circular shapes and rounded corners in various sizes. They are designed to be used as a base for panels, buttons, and other UI controls, with customizable colors through Unity’s tinting system.",
-      "path": "Samples~/RoundedSprites"
+      "displayName": "UI Assets",
+      "description": "Provides basic graphical resources, such as shaders and rounded sprites for controls and panels.",
+      "path": "Samples~/UIAssets"
     },
     {
       "displayName": "Custom UI Controls",
