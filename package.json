@@ -14,5 +14,17 @@
     "UI",
     "controls"
   ],
+  "samples": [
+    {
+      "displayName": "UI Rounded Sprites",
+      "description": "Provides a set of white sprites with circular shapes and rounded corners in various sizes. They are designed to be used as a base for panels, buttons, and other UI controls, with customizable colors through Unity’s tinting system.",
+      "path": "Samples~/RoundedSprites"
+    },
+    {
+      "displayName": "Custom UI Controls",
+      "description": "This sample includes prefabs for common custom UI controls such as switches, generic dropdowns, progress bars, and more. They are ready to use out of the box and can be easily customized to fit the style and functionality of your project.",
+      "path": "Samples~/CustomUIControls"
+    }
+  ],
   "description": "A Unity package that provides a collection of extensible UI controls (buttons, toggles, sliders, input fields, dropdowns, switches, etc.)."
 }
