@@ -24,6 +24,11 @@
       "displayName": "Custom UI Controls",
       "description": "This sample includes prefabs for common custom UI controls such as switches, generic dropdowns, progress bars, and more. They are ready to use out of the box and can be easily customized to fit the style and functionality of your project.",
       "path": "Samples~/CustomUIControls"
+    },
+    {
+      "displayName": "Controls Event Listeners",
+      "description": "Demo scene showing how EventHandlers trigger strongly-typed EventListeners for all UI controls.",
+      "path": "Samples~/ControlsEventListeners"
     }
   ],
   "description": "A Unity package that provides a collection of extensible UI controls (buttons, toggles, sliders, input fields, dropdowns, switches, etc.)."
