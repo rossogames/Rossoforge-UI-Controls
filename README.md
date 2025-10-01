@@ -12,7 +12,6 @@ It includes a strongly-typed, centralized event system, designed so a single lis
 Perfect for projects looking for:
 * Consistent and easy-to-extend UI controls.
 * A decoupled architecture between UI and business logic.
-* Quick integration into menus, HUDs, and popups without duplicating event logic.
 
 #
 **Version:** Unity 6 or higher
