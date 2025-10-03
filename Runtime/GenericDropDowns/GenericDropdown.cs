@@ -5,6 +5,7 @@ using System.Reflection;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 namespace Rossoforge.UI.Controls.GenericDropDowns
 {
@@ -15,8 +16,9 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
     {
         private List<object> items = new();
 
-        [SerializeField] private ScriptableObject[] _dataSource;
         [SerializeField] private string _textMember;
+        [SerializeField] private string _imageMember;
+        [SerializeField] private ScriptableObject[] _dataSource;
         [SerializeField] private DropdownItemSelectedEvent _onSelectedItemChanged = new();
 
         public string TextMember
@@ -54,7 +56,7 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
             foreach (var item in newItems)
             {
                 items.Add(item);
-                options.Add(new OptionData(GetItemText(item)));
+                options.Add(new OptionData(GetItemText(item), GetItemImage(item), Color.white));
             }
             RefreshShownValue();
             HandleValueChanged(0);
@@ -92,8 +94,36 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
                 return val?.ToString() ?? "<null>";
             }
 
-            Debug.LogWarning($"Property '{TextMember}' not found in type {item.GetType().Name}. Fallback to ToString().");
+            Debug.LogWarning($"Property '{TextMember}' not found in type {item.GetType().Name}.");
             return item.ToString();
+        }
+
+        private Sprite GetItemImage(object item)
+        {
+            if (item == null)
+                return null;
+
+            if (string.IsNullOrEmpty(_imageMember))
+                return null;
+
+            var type = item.GetType();
+
+            var prop = type.GetProperty(_imageMember, BindingFlags.Public | BindingFlags.Instance);
+            if (prop != null)
+            {
+                var val = prop.GetValue(item);
+                return (Sprite)val;
+            }
+
+            var field = type.GetField(_imageMember, BindingFlags.Public | BindingFlags.Instance);
+            if (field != null)
+            {
+                var val = field.GetValue(item);
+                return (Sprite)val;
+            }
+
+            Debug.LogWarning($"Property '{_imageMember}' not found in type {item.GetType().Name}.");
+            return null;
         }
 
         private void HandleValueChanged(int index)

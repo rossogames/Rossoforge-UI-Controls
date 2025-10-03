@@ -10,6 +10,7 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
     public class GenericDropdownEditor : DropdownEditor
     {
         SerializedProperty textMemberProp;
+        SerializedProperty imageMemberProp;
         SerializedProperty dataSourceProp;
         SerializedProperty onItemSelectedProp;
 
@@ -17,6 +18,7 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
         {
             base.OnEnable();
             textMemberProp = serializedObject.FindProperty("_textMember");
+            imageMemberProp = serializedObject.FindProperty("_imageMember");
             dataSourceProp = serializedObject.FindProperty("_dataSource");
             onItemSelectedProp = serializedObject.FindProperty("_onSelectedItemChanged");
         }
@@ -29,6 +31,7 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
 
             EditorGUILayout.Space();
             EditorGUILayout.PropertyField(textMemberProp, new GUIContent("Text Member"));
+            EditorGUILayout.PropertyField(imageMemberProp, new GUIContent("Image Member"));
             EditorGUILayout.PropertyField(dataSourceProp, new GUIContent("Data Source"));
             EditorGUILayout.PropertyField(onItemSelectedProp, new GUIContent("On Item Selected Changed"));
 
