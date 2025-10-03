@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Reflection;
 using TMPro;
 using UnityEngine;
@@ -14,6 +15,7 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
     {
         private List<object> items = new();
 
+        [SerializeField] private ScriptableObject[] _dataSource;
         [SerializeField] private string _textMember;
         [SerializeField] private DropdownItemSelectedEvent _onSelectedItemChanged = new();
 
@@ -29,6 +31,12 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
         {
             base.Awake();
             onValueChanged.AddListener(HandleValueChanged);
+        }
+
+        protected override void Start()
+        {
+            base.Start();
+            LoadDataSource();
         }
 
         public void AddItem<T>(T item)
@@ -92,6 +100,25 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
         {
             if (index >= 0 && index < items.Count)
                 _onSelectedItemChanged.Invoke(items[index]);
+        }
+
+        private void ClearItems()
+        {
+            items.Clear();
+            options.Clear();
+            RefreshShownValue();
+        }
+
+        private void LoadDataSource()
+        {
+            if (!Application.isPlaying)
+                return;
+
+            if (_dataSource == null || _dataSource.Count() == 0)
+                return;
+
+            ClearItems();
+            AddItems(_dataSource);
         }
     }
 }
