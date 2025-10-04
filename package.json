@@ -29,6 +29,11 @@
       "displayName": "Controls Event Listeners",
       "description": "Demo scene showing how EventHandlers trigger strongly-typed EventListeners for all UI controls.",
       "path": "Samples~/ControlsEventListeners"
+    },
+    {
+      "displayName": "GenericDropDown Demo",
+      "description": "Demo showing how to load a GenericDropDown from code or using a datasource from the inspector.",
+      "path": "Samples~/GenericDropDown"
     }
   ],
   "description": "A Unity package that provides a collection of extensible UI controls (buttons, toggles, sliders, input fields, dropdowns, switches, etc.)."
