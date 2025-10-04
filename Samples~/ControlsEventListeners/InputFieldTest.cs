@@ -1,5 +1,8 @@
 using Rossoforge.UI.Controls.InputFields;
 
-public class InputFieldTest : InputFieldEventsHandler<InputFieldTest>
+namespace Rossoforge.UI.Popups.UIControls.EventHandlerDemo
 {
+    public class InputFieldTest : InputFieldEventsHandler<InputFieldTest>
+    {
+    }
 }

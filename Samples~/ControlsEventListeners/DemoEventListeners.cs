@@ -2,13 +2,13 @@ using Rossoforge.UI.Controls.Buttons;
 using Rossoforge.UI.Controls.Dropdowns;
 using Rossoforge.UI.Controls.GenericDropDowns;
 using Rossoforge.UI.Controls.InputFields;
+using Rossoforge.UI.Controls.ProgressBars;
 using Rossoforge.UI.Controls.Sliders;
 using Rossoforge.UI.Controls.Switches;
 using Rossoforge.UI.Controls.Toggles;
 using UnityEngine;
-using static Rossoforge.UI.Popups.UIControls.GenericDropdownLoadDemo;
 
-namespace Rossoforge.UI.Popups.UIControls
+namespace Rossoforge.UI.Popups.UIControls.EventHandlerDemo
 {
     public class DemoEventListeners : MonoBehaviour,
         IButtonClickListener<ButtonTest>,
@@ -20,7 +20,8 @@ namespace Rossoforge.UI.Popups.UIControls
         IInputFieldOnSelectListener<InputFieldTest>,
         IInputFieldOnDeselectListener<InputFieldTest>,
         IDropdownValueChangedListener<DropdownTest>,
-        IGenericDropdownSelectedItemChangedListener<GenericDropdownTest, Person>
+        IGenericDropdownSelectedItemChangedListener<GenericDropdownTest, Person>,
+        IProgressBarValueChangedListener<ProgressBarTest>
     {
         public void OnClick(ButtonEventArg<ButtonTest> eventArg)
         {
@@ -70,6 +71,11 @@ namespace Rossoforge.UI.Popups.UIControls
         public void OnSelectedItemChanged(GenericDropdownEventArg<GenericDropdownTest, Person> eventArg)
         {
             Debug.Log($"Selected person: {eventArg.SelectedItem.Name}, Age: {eventArg.SelectedItem.Age}");
+        }
+
+        public void OnValueChanged(ProgressBarEventArg<ProgressBarTest> eventArg)
+        {
+            Debug.Log($"Progress Bar Test changed to: {eventArg.Value}");
         }
     }
 }
