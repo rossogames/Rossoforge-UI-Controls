@@ -5,28 +5,28 @@ namespace Rossoforge.UI.Controls.GenericDropDowns
     [RequireComponent(typeof(GenericDropdown))]
     public abstract class GenericDropdownEventsHandler<T, R> : MonoBehaviour where T : GenericDropdownEventsHandler<T, R>
     {
-        private GenericDropdown _dropdown;
+        protected GenericDropdown Dropdown;
         private IGenericDropdownSelectedItemChangedListener<T, R> _selectedItemChangedListener;
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            _dropdown = GetComponent<GenericDropdown>();
+            Dropdown = GetComponent<GenericDropdown>();
             _selectedItemChangedListener = GetComponentInParent<IGenericDropdownSelectedItemChangedListener<T, R>>(true);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _dropdown.OnSelectedItemChanged.AddListener(OnSelectedItemChanged);
+            Dropdown.OnSelectedItemChanged.AddListener(OnSelectedItemChanged);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            _dropdown.OnSelectedItemChanged.RemoveListener(OnSelectedItemChanged);
+            Dropdown.OnSelectedItemChanged.RemoveListener(OnSelectedItemChanged);
         }
 
         private void OnSelectedItemChanged(object selectedItem)
         {
-            var eventArgs = new GenericDropdownEventArg<T, R>((T)this, _dropdown.value, (R)selectedItem);
+            var eventArgs = new GenericDropdownEventArg<T, R>((T)this, Dropdown.value, (R)selectedItem);
             _selectedItemChangedListener?.OnSelectedItemChanged(eventArgs);
         }
     }

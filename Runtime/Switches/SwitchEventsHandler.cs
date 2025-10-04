@@ -5,23 +5,23 @@ namespace Rossoforge.UI.Controls.Switches
     [RequireComponent(typeof(Switch))]
     public abstract class SwitchEventsHandler<T> : MonoBehaviour where T : SwitchEventsHandler<T>
     {
-        private Switch _switch;
+        protected Switch Switch;
         private ISwitchValueChangedListener<T> _valueChangedListener;
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            _switch = GetComponent<Switch>();
+            Switch = GetComponent<Switch>();
             _valueChangedListener = GetComponentInParent<ISwitchValueChangedListener<T>>(true);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _switch.onValueChanged.AddListener(OnValueChanged);
+            Switch.onValueChanged.AddListener(OnValueChanged);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            _switch.onValueChanged.RemoveListener(OnValueChanged);
+            Switch.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnValueChanged(bool isOn)

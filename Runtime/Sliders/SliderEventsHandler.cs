@@ -6,23 +6,23 @@ namespace Rossoforge.UI.Controls.Sliders
     [RequireComponent(typeof(Slider))]
     public abstract class SliderEventsHandler<T> : MonoBehaviour where T : SliderEventsHandler<T>
     {
-        private Slider _slider;
+        protected Slider Slider;
         private ISliderValueChangedListener<T> _valueChangedListener;
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            _slider = GetComponent<Slider>();
+            Slider = GetComponent<Slider>();
             _valueChangedListener = GetComponentInParent<ISliderValueChangedListener<T>>(true);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _slider.onValueChanged.AddListener(OnValueChanged);
+            Slider.onValueChanged.AddListener(OnValueChanged);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            _slider.onValueChanged.RemoveListener(OnValueChanged);
+            Slider.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnValueChanged(float value)

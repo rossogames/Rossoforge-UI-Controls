@@ -6,23 +6,23 @@ namespace Rossoforge.UI.Controls.Dropdowns
     [RequireComponent(typeof(TMP_Dropdown))]
     public abstract class DropdownEventsHandler<T> : MonoBehaviour where T : DropdownEventsHandler<T>
     {
-        private TMP_Dropdown _dropdown;
+        protected TMP_Dropdown Dropdown;
         private IDropdownValueChangedListener<T> _valueChangedListener;
 
-        private void Awake()
+        protected virtual void Awake()
         {
-            _dropdown = GetComponent<TMP_Dropdown>();
+            Dropdown = GetComponent<TMP_Dropdown>();
             _valueChangedListener = GetComponentInParent<IDropdownValueChangedListener<T>>(true);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _dropdown.onValueChanged.AddListener(OnValueChanged);
+            Dropdown.onValueChanged.AddListener(OnValueChanged);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            _dropdown.onValueChanged.RemoveListener(OnValueChanged);
+            Dropdown.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnValueChanged(int value)

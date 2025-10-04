@@ -5,23 +5,23 @@ namespace Rossoforge.UI.Controls.ProgressBars
     [RequireComponent(typeof(ProgressBar))]
     public abstract class ProgressBarEventsHandler<T> : MonoBehaviour where T : ProgressBarEventsHandler<T>
     {
-        private ProgressBar _progressBar;
+        protected ProgressBar ProgressBar;
         private IProgressBarValueChangedListener<T> _valueChangedListener;
 
         protected virtual void Awake()
         {
-            _progressBar = GetComponent<ProgressBar>();
+            ProgressBar = GetComponent<ProgressBar>();
             _valueChangedListener = GetComponentInParent<IProgressBarValueChangedListener<T>>(true);
         }
 
-        private void OnEnable()
+        protected virtual void OnEnable()
         {
-            _progressBar.onValueChanged.AddListener(OnValueChanged);
+            ProgressBar.onValueChanged.AddListener(OnValueChanged);
         }
 
-        private void OnDisable()
+        protected virtual void OnDisable()
         {
-            _progressBar.onValueChanged.RemoveListener(OnValueChanged);
+            ProgressBar.onValueChanged.RemoveListener(OnValueChanged);
         }
 
         private void OnValueChanged(float value)
