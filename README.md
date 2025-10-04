@@ -12,14 +12,17 @@ It includes a strongly-typed, centralized event system, designed so a single lis
 Perfect for projects looking for:
 * Consistent and easy-to-extend UI controls.
 * A decoupled architecture between UI and business logic.
-* Quick integration into menus, HUDs, and popups without duplicating event logic.
 
-The following dependencies must be installed
-[[Rossoforge-Extensions]](https://github.com/rossogames/Rossoforge-Extensions.git)
-
-Watch the tutorial on [Pending..]
 #
+**Version:** Unity 6 or higher
 
+**Tutorial:** [Pending...]
+
+**Dependencies:**
+* Unity.TextMeshPro
+* [Rossoforge-Extensions](https://github.com/rossogames/Rossoforge-Extensions.git)
+
+#
 #This package is part of the **Rossoforge** suite, designed to streamline and enhance Unity development workflows.
 
 Developed by Agustin Rosso

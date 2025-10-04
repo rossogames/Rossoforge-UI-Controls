@@ -14,5 +14,27 @@
     "UI",
     "controls"
   ],
+  "samples": [
+    {
+      "displayName": "UI Assets",
+      "description": "Provides basic graphical resources, such as shaders and rounded sprites for controls and panels.",
+      "path": "Samples~/UIAssets"
+    },
+    {
+      "displayName": "Custom UI Controls",
+      "description": "This sample includes prefabs for common custom UI controls such as switches, generic dropdowns, progress bars, and more. They are ready to use out of the box and can be easily customized to fit the style and functionality of your project.",
+      "path": "Samples~/CustomUIControls"
+    },
+    {
+      "displayName": "Controls Event Listeners",
+      "description": "Demo scene showing how EventHandlers trigger strongly-typed EventListeners for all UI controls.",
+      "path": "Samples~/ControlsEventListeners"
+    },
+    {
+      "displayName": "GenericDropDown Demo",
+      "description": "Demo showing how to load a GenericDropDown from code or using a datasource from the inspector.",
+      "path": "Samples~/GenericDropDown"
+    }
+  ],
   "description": "A Unity package that provides a collection of extensible UI controls (buttons, toggles, sliders, input fields, dropdowns, switches, etc.)."
 }
